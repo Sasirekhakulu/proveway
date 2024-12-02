@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOGO Offer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>YAY! It's BOGO</h1>
+
+    <!-- Card 1 -->
+    <div class="box" onmouseover="activateBox(0)">
+      <div class="box-header">
+        <label>
+          <input type="radio" name="unit" id="radio1">
+          1 Unit <span class="discount">10% Off</span>
+          <div style="padding-left: 35px; font-size: 15px; color: #8b8888;">Standard Price</div>
+        </label>
+        <div class="price-info">
+          <span class="current-price">$10.00 USD</span>
+          <span class="original-price">$24.00 USD</span>
+        </div>
+      </div>
+      <div class="box-content">
+        <div class="options">
+          <div class="option">
+            <label>Size:</label>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+          </div>
+          <div class="option">
+            <label>Color:</label>
+            <select>
+              <option>Black</option>
+              <option>Blue</option>
+              <option>Red</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="box" onmouseover="activateBox(1)">
+      <div class="box-header">
+        <label>
+          <input type="radio" name="unit" id="radio1">
+          2 Unit <span class="discount">20% Off</span>
+        </label>
+        <div class="price-info">
+          <span class="current-price">$18.00 USD</span>
+          <span class="original-price">$24.00 USD</span>
+        </div>
+      </div>
+      <div class="box-content">
+        <div class="options">
+          <div class="option">
+            <label>Size:</label>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+          </div>
+          <div class="option">
+            <label>Color:</label>
+            <select>
+              <option>Black</option>
+              <option>Blue</option>
+              <option>Red</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="box" onmouseover="activateBox(2)">
+      <div class="box-header">
+        <label>
+          <input type="radio" name="unit" id="radio1">
+          3 Unit <span class="discount">30% Off</span>
+        </label>
+        <div class="price-info">
+          <span class="current-price">$24.00 USD</span>
+          <span class="original-price">$24.00 USD</span>
+        </div>
+      </div>
+      <div class="box-content">
+        <div class="options">
+          <div class="option">
+            <label>Size:</label>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+          </div>
+          <div class="option">
+            <label>Color:</label>
+            <select>
+              <option>Black</option>
+              <option>Blue</option>
+              <option>Red</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <table>
+      <tr>
+        <td class="free-delivery">Free Delivery</td>
+        <td class="total-price">Total: $18.00 USD</td>
+      </tr>
+    </table>
+    <a href="#" class="add-to-cart">+ Add to Cart</a>
+    <div class="footer">@ Powered by Pumper</div>
+  </div>
+
+  <script>
+    const boxes = document.querySelectorAll('.box');
+const radios = document.querySelectorAll('input[type="radio"]');
+
+function activateBox(index) {
+  boxes.forEach((box, i) => {
+    if (i === index) {
+      box.classList.add('active');
+      radios[i].checked = true;
+    } else {
+      box.classList.remove('active');
+    }
+  });
+}
+
+// Automatically activate the second card (index 1) on page load
+window.onload = function () {
+  activateBox(1);
+};
+  </script>
+  
+</body>
+</html>
